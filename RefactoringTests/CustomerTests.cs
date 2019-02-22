@@ -20,6 +20,7 @@ namespace Refactoring1.Tests
             customer.addRental(new Rental(new Movie("Inside Out", Movie.CHILDRENS), 4));
             customer.addRental(new Rental(new Movie("Titanic", Movie.REGULAR), 1));
             customer.addRental(new Rental(new Movie("Ghost", Movie.NEW_RELEASE), 10));
+            customer.addRental(new Rental(new Movie("The Favourite", Movie.NEW_RELEASE), 1));
 
             string actual = customer.statement();
             string expected = "Rental Record for John Smith\n";
@@ -28,8 +29,9 @@ namespace Refactoring1.Tests
             expected += "\tInside Out\t3\n";
             expected += "\tTitanic\t2\n";
             expected += "\tGhost\t30\n";
-            expected += "Amount owed is 57,5\n";
-            expected += "You earned 7 frequent renter points";
+            expected += "\tThe Favourite\t3\n";
+            expected += "Amount owed is 60,5\n";
+            expected += "You earned 8 frequent renter points";
 
             Assert.AreEqual(expected, actual);
         }
