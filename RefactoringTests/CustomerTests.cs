@@ -34,6 +34,19 @@ namespace Refactoring1.Tests
             expected += "You earned 8 frequent renter points";
 
             Assert.AreEqual(expected, actual);
+
+            Customer customer2 = new Customer("Bill Graham");
+            customer2.addRental(new Rental(new Movie("A Star is Born", Movie.NEW_RELEASE), 5));
+            customer2.addRental(new Rental(new Movie("The Favourite", Movie.NEW_RELEASE), 1));
+
+            string actual2 = customer2.statement();
+            string expected2 = "Rental Record for Bill Graham\n";
+            expected2 += "\tA Star is Born\t15\n";
+            expected2 += "\tThe Favourite\t3\n";
+            expected2 += "Amount owed is 18\n";
+            expected2 += "You earned 3 frequent renter points";
+
+            Assert.AreEqual(expected2, actual2);
         }
     }
 }
