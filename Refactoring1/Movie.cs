@@ -12,13 +12,13 @@ namespace Refactoring1
         public const int REGULAR = 0;
         public const int NEW_RELEASE = 1;
 
-        public string title { get; }
-        public int priceCode { get; set; }
+        public string Title { get; }
+        public int PriceCode { get; set; }
 
         public Movie(string title, int priceCode)
         {
-            this.title = title;
-            this.priceCode = priceCode;
+            this.Title = title;
+            this.PriceCode = priceCode;
         }
 
     }

@@ -15,14 +15,14 @@ namespace Refactoring1.Tests
         public void statementTest()
         {
             Customer customer = new Customer("John Smith");
-            customer.addRental(new Rental(new Movie("Green Book", Movie.NEW_RELEASE), 7));
-            customer.addRental(new Rental(new Movie("Monsters Inc.", Movie.CHILDRENS), 3));
-            customer.addRental(new Rental(new Movie("Inside Out", Movie.CHILDRENS), 4));
-            customer.addRental(new Rental(new Movie("Titanic", Movie.REGULAR), 1));
-            customer.addRental(new Rental(new Movie("Ghost", Movie.NEW_RELEASE), 10));
-            customer.addRental(new Rental(new Movie("The Favourite", Movie.NEW_RELEASE), 1));
+            customer.AddRental(new Rental(new Movie("Green Book", Movie.NEW_RELEASE), 7));
+            customer.AddRental(new Rental(new Movie("Monsters Inc.", Movie.CHILDRENS), 3));
+            customer.AddRental(new Rental(new Movie("Inside Out", Movie.CHILDRENS), 4));
+            customer.AddRental(new Rental(new Movie("Titanic", Movie.REGULAR), 1));
+            customer.AddRental(new Rental(new Movie("Ghost", Movie.NEW_RELEASE), 10));
+            customer.AddRental(new Rental(new Movie("The Favourite", Movie.NEW_RELEASE), 1));
 
-            string actual = customer.statement();
+            string actual = customer.Statement();
             string expected = "Rental Record for John Smith\n";
             expected += "\tGreen Book\t21\n";
             expected += "\tMonsters Inc.\t1,5\n";
@@ -36,10 +36,10 @@ namespace Refactoring1.Tests
             Assert.AreEqual(expected, actual);
 
             Customer customer2 = new Customer("Bill Graham");
-            customer2.addRental(new Rental(new Movie("A Star is Born", Movie.NEW_RELEASE), 5));
-            customer2.addRental(new Rental(new Movie("The Favourite", Movie.NEW_RELEASE), 1));
+            customer2.AddRental(new Rental(new Movie("A Star is Born", Movie.NEW_RELEASE), 5));
+            customer2.AddRental(new Rental(new Movie("The Favourite", Movie.NEW_RELEASE), 1));
 
-            string actual2 = customer2.statement();
+            string actual2 = customer2.Statement();
             string expected2 = "Rental Record for Bill Graham\n";
             expected2 += "\tA Star is Born\t15\n";
             expected2 += "\tThe Favourite\t3\n";
