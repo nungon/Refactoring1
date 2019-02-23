@@ -40,7 +40,7 @@ namespace Refactoring1
             return result;
         }
 
-        internal int getFrequentRenterPoints()
+        public int GetFrequentRenterPoints()
         {
             if (Movie.PriceCode == Movie.NEW_RELEASE && DaysRented > 1)
                 return 2;
