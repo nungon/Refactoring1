@@ -26,7 +26,7 @@ namespace Refactoring1
             string result = $"Rental Record for {Name}\n";
 
             foreach (Rental rental in rentals)
-                result += $"\t{rental.Movie.Title}\t{rental.GetCharge().ToString()}\n";
+                result += $"\t{rental.Movie.Title}\t{rental.Movie.GetCharge(rental.DaysRented).ToString()}\n";
 
             //add footer lines
             result += $"Amount owed is {GetTotalCharge().ToString()}\n";
@@ -39,7 +39,7 @@ namespace Refactoring1
         {
             string result = $"<H1>Rentals for <EM>{Name}</EM></H1><P>\n";
             foreach(Rental rental in rentals)
-                result += $"{rental.Movie.Title}: {rental.GetCharge()}<BR>\n";
+                result += $"{rental.Movie.Title}: {rental.Movie.GetCharge(rental.DaysRented)}<BR>\n";
 
             result += $"<P>You owe <EM>{GetTotalCharge().ToString()}</EM><P>\n";
             result += $"On this rental you earned <EM>{GetTotalFrequentRenterPoints().ToString()}</EM> frequent renter points<P>";
@@ -52,7 +52,7 @@ namespace Refactoring1
             int result = 0;
             foreach (Rental rental in rentals)
             {
-                result += rental.GetFrequentRenterPoints();
+                result += rental.Movie.GetFrequentRenterPoints(rental.DaysRented);
             }
             return result;
         }
@@ -60,9 +60,9 @@ namespace Refactoring1
         private double GetTotalCharge()
         {
             double result = 0;
-            foreach (Rental each in rentals)
+            foreach (Rental rental in rentals)
             {
-                result += each.GetCharge();
+                result += rental.Movie.GetCharge(rental.DaysRented);
             }
             return result;
         }
