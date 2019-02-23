@@ -23,7 +23,6 @@ namespace Refactoring1
 
         public string Statement()
         {
-            IList<Rental> rentals = this.rentals;
             string result = $"Rental Record for {Name}\n";
 
             foreach (Rental rental in rentals)
@@ -32,6 +31,18 @@ namespace Refactoring1
             //add footer lines
             result += $"Amount owed is {GetTotalCharge().ToString()}\n";
             result += $"You earned {GetTotalFrequentRenterPoints().ToString()} frequent renter points";
+
+            return result;
+        }
+
+        public string htmlStatement()
+        {
+            string result = $"<H1>Rentals for <EM>{Name}</EM></H1><P>\n";
+            foreach(Rental rental in rentals)
+                result += $"{rental.Movie.Title}: {rental.GetCharge()}<BR>\n";
+
+            result += $"<P>You owe <EM>{GetTotalCharge().ToString()}</EM><P>\n";
+            result += $"On this rental you earned <EM>{GetTotalFrequentRenterPoints().ToString()}</EM> frequent renter points<P>";
 
             return result;
         }
