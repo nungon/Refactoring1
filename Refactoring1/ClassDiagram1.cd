@@ -3,7 +3,7 @@
   <Class Name="Refactoring1.Customer">
     <Position X="9.75" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAIAAAAAAAAAAIACAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAACAAIAAAAAAAIAAIAAAQCAAAAAAAAAAAAAQAAAAA=</HashCode>
       <FileName>Customer.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
@@ -13,19 +13,50 @@
   <Class Name="Refactoring1.Movie">
     <Position X="2.25" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAQAAAAAQAIBAAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <HashCode>AgAAAAAAAAAAAEQAIBIAAAAAgEAAAAAAAAAAAAAAACA=</HashCode>
       <FileName>Movie.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_price" />
+    </ShowAsAssociation>
   </Class>
   <Class Name="Refactoring1.Rental">
     <Position X="5.5" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAEAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAQAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Rental.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="movie" />
+      <Property Name="Movie" />
     </ShowAsAssociation>
+  </Class>
+  <Class Name="Refactoring1.Price" Collapsed="true">
+    <Position X="6.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIBAAAAAAAAAACA=</HashCode>
+      <FileName>Price.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Refactoring1.ChildrensPrice" Collapsed="true">
+    <Position X="6.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAACA=</HashCode>
+      <FileName>Price.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Refactoring1.NewReleasePrice" Collapsed="true">
+    <Position X="4.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIBAAAAAAAAAACA=</HashCode>
+      <FileName>Price.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Refactoring1.RegularPrice" Collapsed="true">
+    <Position X="9" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAACA=</HashCode>
+      <FileName>Price.cs</FileName>
+    </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

@@ -13,44 +13,47 @@ namespace Refactoring1
         public const int NEW_RELEASE = 1;
 
         public string Title { get; }
-        public int PriceCode { get; set; }
+        //private int _priceCode;
+        private Price _price;
 
         public Movie(string title, int priceCode)
         {
             this.Title = title;
-            this.PriceCode = priceCode;
+            setPriceCode(priceCode);
         }
-
+        public int getPriceCode()
+        {
+            return _price.getPriceCode();
+        }
+        public void setPriceCode(int arg)
+        {
+            switch (arg)
+            {
+                case REGULAR:
+                    _price = new RegularPrice();
+                    break;
+                case CHILDRENS:
+                    _price = new ChildrensPrice();
+                    break;
+                case NEW_RELEASE:
+                    _price = new NewReleasePrice();
+                    break;
+                default:
+                    throw new ArgumentException("Incorrect price code");
+            }
+        }
+               
         public double GetCharge(int daysRented)
         {
-            double result = 0;
-            switch (PriceCode)
-            {
-                case Movie.REGULAR:
-                    result += 2;
-                    if (daysRented > 2)
-                        result += (daysRented - 2) * 1.5;
-                    break;
-                case Movie.NEW_RELEASE:
-                    result += daysRented * 3;
-                    break;
-                case Movie.CHILDRENS:
-                    result += 1.5;
-                    if (daysRented > 3)
-                        result += (daysRented - 3) * 1.5;
-                    break;
-            }
-
-            return result;
+            return _price.getCharge(daysRented);
         }
 
 
         public int GetFrequentRenterPoints(int daysRented)
         {
-            if (PriceCode == NEW_RELEASE && daysRented > 1)
-                return 2;
-            else
-                return 1;
+            return _price.getFrequentRenterPoints(daysRented);
         }
+
+
     }
 }
